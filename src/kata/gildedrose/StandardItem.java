@@ -12,7 +12,12 @@ public class StandardItem {
 
     public void endOfDay() {
         this.item.sellIn--;
-        this.item.quality--;
+        if (this.item.sellIn >= 0) {
+            this.item.quality--;
+        } else {
+            this.item.quality = this.item.quality - 2;
+        }
+
     }
 
     public int getSellIn() {
