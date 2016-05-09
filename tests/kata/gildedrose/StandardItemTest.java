@@ -9,13 +9,11 @@ public class StandardItemTest {
     @Test
     public void sellInLowersAtTheEndOfEachDay()
     {
-        String name = "An standard item";
-        int sellIn = 10;
-        int quality = 6;
+        int initialSellIn = 10;
+        StandardItem item = new StandardItem("An standard item", initialSellIn, 6);
 
-        StandardItem item = new StandardItem(name, sellIn, quality);
         item.endOfDay();
-        assertTrue(item.getSellIn() < sellIn);
-    }
 
+        assertTrue(item.getSellIn() < initialSellIn);
+    }
 }
