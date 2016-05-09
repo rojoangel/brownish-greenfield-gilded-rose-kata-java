@@ -11,9 +11,9 @@ public class StandardItem {
     }
 
     public void endOfDay() {
-        this.item.sellIn--;
+        this.item.sellIn = this.item.sellIn - 1;
         if (this.item.sellIn >= 0) {
-            this.item.quality--;
+            this.item.quality = this.item.quality - 1;
         } else {
             this.item.quality = this.item.quality - 2;
         }
