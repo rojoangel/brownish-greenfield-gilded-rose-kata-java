@@ -16,4 +16,17 @@ public class StandardItemTest {
 
         assertTrue(item.getSellIn() < initialSellIn);
     }
+
+    @Test
+    public void qualityLowersAtTheEndOfEachDay() throws Exception
+    {
+        int initialQuality = 6;
+        StandardItem item = new StandardItem("An standard item", 10, initialQuality);
+
+        item.endOfDay();
+
+        assertTrue(item.getQuality() < initialQuality);
+
+
+    }
 }

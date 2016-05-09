@@ -12,9 +12,14 @@ public class StandardItem {
 
     public void endOfDay() {
         this.item.sellIn--;
+        this.item.quality--;
     }
 
     public int getSellIn() {
         return this.item.sellIn;
+    }
+
+    public int getQuality() {
+        return this.item.quality;
     }
 }
