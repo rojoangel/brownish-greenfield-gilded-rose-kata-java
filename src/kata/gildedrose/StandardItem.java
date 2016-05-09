@@ -12,12 +12,16 @@ public class StandardItem {
 
     public void endOfDay() {
         setSellIn(getSellIn() - 1);
-        if (this.item.sellIn >= 0) {
+        if (hasSellByDatePassed()) {
             setQuality(getQuality() - 1);
         } else {
             setQuality(getQuality() - 2);
         }
 
+    }
+
+    private boolean hasSellByDatePassed() {
+        return this.item.sellIn >= 0;
     }
 
     private void setQuality(int newQuantity) {
