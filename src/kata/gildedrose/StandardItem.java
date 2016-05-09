@@ -13,13 +13,20 @@ public class StandardItem {
     }
 
     public void endOfDay() {
-        setSellIn(getSellIn() - SELL_IN_DECREASE_STEP);
+        decreaseSellIn();
+        decreaseQuality();
+    }
+
+    private void decreaseQuality() {
         if (hasSellByDatePassed()) {
             setQuality(getQuality() - QUALITY_DECREASE_STEP);
         } else {
             setQuality(getQuality() - 2 * QUALITY_DECREASE_STEP);
         }
+    }
 
+    private void decreaseSellIn() {
+        setSellIn(getSellIn() - SELL_IN_DECREASE_STEP);
     }
 
     private boolean hasSellByDatePassed() {
