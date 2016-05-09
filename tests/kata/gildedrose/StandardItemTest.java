@@ -42,6 +42,13 @@ public class StandardItemTest {
         int finalQuality = item.getQuality();
 
         assertTrue(finalQuality - intermediateQuality == 2 * (intermediateQuality - initialQuality));
+    }
 
+    @Test
+    public void qualityOfAnItemIsNeverNegative() throws Exception {
+
+        StandardItem item = new StandardItem("An standard item", -1, 1);
+        item.endOfDay();
+        assertTrue(item.getQuality() >= 0);
     }
 }
