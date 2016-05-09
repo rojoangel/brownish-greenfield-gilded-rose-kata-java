@@ -7,7 +7,7 @@ import static org.junit.Assert.*;
 public class StandardItemTest {
 
     @Test
-    public void sellInLowersAtTheEndOfEachDay()
+    public void sellInLowersAtTheEndOfEachDay() throws Exception
     {
         int initialSellIn = 10;
         StandardItem item = new StandardItem("An standard item", initialSellIn, 6);
