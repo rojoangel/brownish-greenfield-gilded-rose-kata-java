@@ -26,7 +26,5 @@ public class StandardItemTest {
         item.endOfDay();
 
         assertTrue(item.getQuality() < initialQuality);
-
-
     }
 }
