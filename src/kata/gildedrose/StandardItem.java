@@ -4,6 +4,8 @@ import com.gildedrose.Item;
 
 public class StandardItem {
 
+    public static final int SELL_IN_DECREASE_STEP = 1;
+    public static final int QUALITY_DECREASE_STEP = 1;
     private final Item item;
 
     public StandardItem(String name, int sellIn, int quality) {
@@ -11,11 +13,11 @@ public class StandardItem {
     }
 
     public void endOfDay() {
-        setSellIn(getSellIn() - 1);
+        setSellIn(getSellIn() - SELL_IN_DECREASE_STEP);
         if (hasSellByDatePassed()) {
-            setQuality(getQuality() - 1);
+            setQuality(getQuality() - QUALITY_DECREASE_STEP);
         } else {
-            setQuality(getQuality() - 2);
+            setQuality(getQuality() - 2 * QUALITY_DECREASE_STEP);
         }
 
     }
