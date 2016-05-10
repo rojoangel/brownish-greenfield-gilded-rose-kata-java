@@ -4,10 +4,10 @@ import com.gildedrose.Item;
 
 public class StandardItem {
 
-    public static final int FACTOR_1 = 1;
-    public static final int SELL_IN_STEP = 1;
-    public static final int QUALITY_STEP = 1;
-    public static final int FACTOR_2 = 2;
+    private static final int FACTOR_1 = 1;
+    private static final int SELL_IN_STEP = 1;
+    private static final int QUALITY_STEP = 1;
+    private static final int FACTOR_2 = 2;
     private final Item item;
 
     public StandardItem(String name, int sellIn, int quality) {
