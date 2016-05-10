@@ -1,5 +1,7 @@
-package kata.gildedrose;
+package kata.gildedrose.item;
 
+import kata.gildedrose.Item;
+import kata.gildedrose.item.AgedBrie;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

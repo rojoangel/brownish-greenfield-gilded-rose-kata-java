@@ -1,4 +1,6 @@
-package kata.gildedrose;
+package kata.gildedrose.item;
+
+import kata.gildedrose.Item;
 
 public class AgedBrie extends Item {
 
