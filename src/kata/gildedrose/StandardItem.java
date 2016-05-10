@@ -15,7 +15,7 @@ public class StandardItem {
     }
 
     public void endOfDay() {
-        decreaseSellIn();
+        calculateSellIn();
         calculateQuality();
     }
 
@@ -25,6 +25,10 @@ public class StandardItem {
         } else {
             decreaseQuality(FACTOR_2);
         }
+    }
+
+    protected void calculateSellIn() {
+        decreaseSellIn();
     }
 
     protected void increaseQuality() {
