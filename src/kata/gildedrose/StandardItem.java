@@ -4,8 +4,10 @@ import com.gildedrose.Item;
 
 public class StandardItem {
 
+    public static final int FACTOR_1 = 1;
     public static final int SELL_IN_STEP = 1;
     public static final int QUALITY_STEP = 1;
+    public static final int FACTOR_2 = 2;
     private final Item item;
 
     public StandardItem(String name, int sellIn, int quality) {
@@ -19,11 +21,9 @@ public class StandardItem {
 
     protected void calculateQuality() {
         if (hasSellByDatePassed()) {
-            int factor = 1;
-            decreaseQuality(factor);
+            decreaseQuality(FACTOR_1);
         } else {
-            int factor = 2;
-            decreaseQuality(factor);
+            decreaseQuality(FACTOR_2);
         }
     }
 
