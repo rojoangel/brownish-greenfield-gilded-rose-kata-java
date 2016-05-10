@@ -51,14 +51,4 @@ public class StandardItemTest {
         item.endOfDay();
         assertTrue(item.getQuality() >= 0);
     }
-
-    @Test
-    public void agedBrieIncreasesQualityTheOlderItGets() throws Exception {
-
-        int initialQuality = 7;
-        StandardItem item = new StandardItem("Aged Brie", 10, initialQuality);
-        item.endOfDay();
-        assertTrue(item.getQuality() > initialQuality);
-
-    }
 }

@@ -17,22 +17,17 @@ public class StandardItem {
         calculateQuality();
     }
 
-    private void calculateQuality() {
-
-        if ("Aged Brie".equals(this.item.name)) {
-            increaseQuality();
+    protected void calculateQuality() {
+        if (hasSellByDatePassed()) {
+            int factor = 1;
+            decreaseQuality(factor);
         } else {
-            if (hasSellByDatePassed()) {
-                int factor = 1;
-                decreaseQuality(factor);
-            } else {
-                int factor = 2;
-                decreaseQuality(factor);
-            }
+            int factor = 2;
+            decreaseQuality(factor);
         }
     }
 
-    private void increaseQuality() {
+    protected void increaseQuality() {
         setQuality(getQuality() + QUALITY_STEP);
     }
 
