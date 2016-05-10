@@ -14,10 +14,10 @@ public class StandardItem {
 
     public void endOfDay() {
         decreaseSellIn();
-        decreaseQuality();
+        calculateQuality();
     }
 
-    private void decreaseQuality() {
+    private void calculateQuality() {
         int newQuality;
 
         if ("Aged Brie".equals(this.item.name)) {
