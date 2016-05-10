@@ -19,14 +19,21 @@ public class StandardItem {
 
     private void decreaseQuality() {
         int newQuality;
-        if (hasSellByDatePassed()) {
-            newQuality = getQuality() - QUALITY_DECREASE_STEP;
+
+        if ("Aged Brie".equals(this.item.name)) {
+            newQuality = getQuality() + QUALITY_DECREASE_STEP;
         } else {
-            newQuality = getQuality() - 2 * QUALITY_DECREASE_STEP;
+            if (hasSellByDatePassed()) {
+                newQuality = getQuality() - QUALITY_DECREASE_STEP;
+            } else {
+                newQuality = getQuality() - 2 * QUALITY_DECREASE_STEP;
+            }
         }
+
         if (newQuality < 0) {
             newQuality = 0;
         }
+
         setQuality(newQuality);
     }
 
