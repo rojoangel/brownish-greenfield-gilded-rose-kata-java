@@ -10,7 +10,7 @@ public class StandardItemTest {
     public void sellInLowersAtTheEndOfEachDay() throws Exception
     {
         int initialSellIn = 10;
-        StandardItem item = new StandardItem("An standard item", initialSellIn, 6);
+        Item item = new StandardItem("An standard item", initialSellIn, 6);
 
         item.endOfDay();
 
@@ -21,7 +21,7 @@ public class StandardItemTest {
     public void qualityLowersAtTheEndOfEachDay() throws Exception
     {
         int initialQuality = 6;
-        StandardItem item = new StandardItem("An standard item", 10, initialQuality);
+        Item item = new StandardItem("An standard item", 10, initialQuality);
 
         item.endOfDay();
 
@@ -33,7 +33,7 @@ public class StandardItemTest {
 
         int initialQuality = 20;
 
-        StandardItem item = new StandardItem("An standard item", 1, initialQuality);
+        Item item = new StandardItem("An standard item", 1, initialQuality);
         item.endOfDay();
 
         int intermediateQuality = item.getQuality();
@@ -47,7 +47,7 @@ public class StandardItemTest {
     @Test
     public void qualityOfAnItemIsNeverNegative() throws Exception {
 
-        StandardItem item = new StandardItem("An standard item", -1, 1);
+        Item item = new StandardItem("An standard item", -1, 1);
         item.endOfDay();
         assertTrue(item.getQuality() >= 0);
     }
