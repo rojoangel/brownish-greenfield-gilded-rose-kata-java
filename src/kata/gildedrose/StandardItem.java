@@ -24,13 +24,17 @@ public class StandardItem {
             setQuality(newQuality);
         } else {
             if (hasSellByDatePassed()) {
-                int newQuality = getQuality() - QUALITY_STEP;
-                setQuality(newQuality);
+                int factor = 1;
+                decreaseQuality(factor);
             } else {
-                int newQuality = getQuality() - 2 * QUALITY_STEP;
-                setQuality(newQuality);
+                int factor = 2;
+                decreaseQuality(factor);
             }
         }
+    }
+
+    private void decreaseQuality(int factor) {
+        setQuality(getQuality() - factor * QUALITY_STEP);
     }
 
     private void decreaseSellIn() {
