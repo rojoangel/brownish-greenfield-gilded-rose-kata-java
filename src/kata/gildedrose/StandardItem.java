@@ -20,8 +20,7 @@ public class StandardItem {
     private void calculateQuality() {
 
         if ("Aged Brie".equals(this.item.name)) {
-            int newQuality = getQuality() + QUALITY_STEP;
-            setQuality(newQuality);
+            increaseQuality();
         } else {
             if (hasSellByDatePassed()) {
                 int factor = 1;
@@ -31,6 +30,10 @@ public class StandardItem {
                 decreaseQuality(factor);
             }
         }
+    }
+
+    private void increaseQuality() {
+        setQuality(getQuality() + QUALITY_STEP);
     }
 
     private void decreaseQuality(int factor) {
