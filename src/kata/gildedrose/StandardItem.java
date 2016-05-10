@@ -25,15 +25,9 @@ public class StandardItem {
         } else {
             if (hasSellByDatePassed()) {
                 int newQuality = getQuality() - QUALITY_STEP;
-                if (newQuality < 0) {
-                    newQuality = 0;
-                }
                 setQuality(newQuality);
             } else {
                 int newQuality = getQuality() - 2 * QUALITY_STEP;
-                if (newQuality < 0) {
-                    newQuality = 0;
-                }
                 setQuality(newQuality);
             }
         }
@@ -47,8 +41,11 @@ public class StandardItem {
         return this.item.sellIn >= 0;
     }
 
-    private void setQuality(int newQuantity) {
-        this.item.quality = newQuantity;
+    private void setQuality(int newQuality) {
+        if (newQuality < 0) {
+            newQuality = 0;
+        }
+        this.item.quality = newQuality;
     }
 
     private void setSellIn(int newSellIn) {
