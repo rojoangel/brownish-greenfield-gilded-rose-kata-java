@@ -23,4 +23,10 @@ public class BackstagePassTest {
         assertTrue(item.getQuality() == initialQuality + 3);
     }
 
+    @Test
+    public void qualityDropsToZeroAfterTheConcert () throws Exception {
+        Item item = new BackstagePass(0, 34);
+        item.endOfDay();
+        assertTrue(item.getQuality() == 0);
+    }
 }

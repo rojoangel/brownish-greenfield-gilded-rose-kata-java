@@ -45,6 +45,10 @@ public abstract class Item {
         setQuality(getQuality() - factor * QUALITY_STEP);
     }
 
+    protected void zeroQuality() {
+        setQuality(0);
+    }
+
     protected void decreaseSellIn() {
         setSellIn(getSellIn() - SELL_IN_STEP);
     }
@@ -61,6 +65,5 @@ public abstract class Item {
     protected abstract void calculateQuality();
 
     protected abstract void calculateSellIn();
-
 
 }

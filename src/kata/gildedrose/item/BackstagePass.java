@@ -12,11 +12,18 @@ public class BackstagePass  extends Item {
 
     @Override
     protected void calculateQuality() {
-        int factor = FACTOR_2;
-        if (getSellIn() <= 5) {
-            factor = FACTOR_3;
+        if (getSellIn() < 0) {
+            zeroQuality();
+            return;
         }
-        increaseQuality(factor);
+
+        if (getSellIn() <= 5) {
+            increaseQuality(FACTOR_3);
+            return;
+        }
+
+        increaseQuality(FACTOR_2);
+
     }
 
     @Override
