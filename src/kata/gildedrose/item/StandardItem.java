@@ -4,8 +4,8 @@ import kata.gildedrose.Item;
 
 public class StandardItem extends Item {
 
-    public StandardItem(String name, int sellIn, int quality) {
-        super(name, sellIn, quality);
+    public StandardItem(int sellIn, int quality) {
+        super("An standard item", sellIn, quality);
     }
 
     protected void calculateQuality() {
