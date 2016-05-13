@@ -4,8 +4,8 @@ import kata.gildedrose.Item;
 
 public class Sulfuras extends Item {
 
-    public Sulfuras(String name, int initialSellIn, int i) {
-        super(name, initialSellIn, i);
+    public Sulfuras(int initialSellIn, int i) {
+        super("Sulfuras", initialSellIn, i);
     }
 
     @Override
