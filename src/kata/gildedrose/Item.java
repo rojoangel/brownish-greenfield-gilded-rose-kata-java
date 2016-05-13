@@ -37,8 +37,8 @@ public abstract class Item {
         this.item.sellIn = newSellIn;
     }
 
-    protected void increaseQuality() {
-        setQuality(getQuality() + QUALITY_STEP);
+    protected void increaseQuality(int factor) {
+        setQuality(getQuality() + factor * QUALITY_STEP);
     }
 
     protected void decreaseQuality(int factor) {
