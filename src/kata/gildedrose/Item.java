@@ -26,6 +26,10 @@ public abstract class Item {
         if (newQuality < 0) {
             newQuality = 0;
         }
+
+        if (newQuality > 50) {
+            newQuality = 50;
+        }
         this.item.quality = newQuality;
     }
 

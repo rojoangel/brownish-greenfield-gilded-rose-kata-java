@@ -15,4 +15,12 @@ public class AgedBrieTest {
         assertTrue(item.getQuality() > initialQuality);
     }
 
+    @Test
+    public void qualityIsNeverGreaterThan50() throws Exception {
+        Item item = new StandardItem(27, 50);
+        item.endOfDay();
+        assertFalse(item.getQuality() > 50);
+    }
+
+
 }
