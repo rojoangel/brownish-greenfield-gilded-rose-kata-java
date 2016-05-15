@@ -35,8 +35,15 @@ public class GildedRoseTest {
 
                             @Override
                             protected void endOfDaySellIn() {}
-                        }
-                }
+                }},
+                {"backstage pass - quality increases",
+                        new BackstagePass(15, 27), new BackstagePass(14, 28)},
+                {"backstage pass - quality increases by 2 when sellIn is 10 days or less",
+                        new BackstagePass(10, 27), new BackstagePass(9, 29)},
+                {"backstage pass - quality increases by 3 when sellIn is 5 days or less",
+                        new BackstagePass(6, 27), new BackstagePass(5, 30)},
+                {"backstage pass - quality drops to zero after theConcert",
+                        new BackstagePass(0, 27), new BackstagePass(-1, 0)}
         };
     }
 
