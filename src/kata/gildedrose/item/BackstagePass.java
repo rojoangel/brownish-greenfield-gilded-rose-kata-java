@@ -9,7 +9,7 @@ public class BackstagePass  extends Item {
     }
 
     @Override
-    protected void calculateQuality() {
+    protected void endOfDayQuality() {
         if (getSellIn() < 0) {
             zeroQuality();
             return;
@@ -29,7 +29,7 @@ public class BackstagePass  extends Item {
     }
 
     @Override
-    protected void calculateSellIn() {
+    protected void endOfDaySellIn() {
         decreaseSellIn();
     }
 }

@@ -56,12 +56,12 @@ public abstract class Item {
     }
 
     public void endOfDay() {
-        calculateSellIn();
-        calculateQuality();
+        endOfDaySellIn();
+        endOfDayQuality();
     }
 
-    protected abstract void calculateQuality();
+    protected abstract void endOfDayQuality();
 
-    protected abstract void calculateSellIn();
+    protected abstract void endOfDaySellIn();
 
 }

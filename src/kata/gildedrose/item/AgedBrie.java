@@ -9,12 +9,12 @@ public class AgedBrie extends Item {
     }
 
     @Override
-    protected void calculateQuality() {
+    protected void endOfDayQuality() {
         increaseQualityBy(1);
     }
 
     @Override
-    protected void calculateSellIn() {
+    protected void endOfDaySellIn() {
         decreaseSellIn();
     }
 }

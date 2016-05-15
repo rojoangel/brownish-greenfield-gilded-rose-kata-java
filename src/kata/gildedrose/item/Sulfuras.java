@@ -11,12 +11,12 @@ public class Sulfuras extends Item {
     }
 
     @Override
-    protected void calculateQuality() {
+    protected void endOfDayQuality() {
         // do nothing
     }
 
     @Override
-    protected void calculateSellIn() {
+    protected void endOfDaySellIn() {
         // do nothing;
     }
 }
