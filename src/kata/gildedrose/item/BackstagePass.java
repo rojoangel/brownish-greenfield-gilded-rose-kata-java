@@ -29,7 +29,7 @@ public class BackstagePass  extends Item {
     }
 
     private boolean hasConcertDayPassed() {
-        return this.item.sellIn < 0;
+        return hasSellByDatePassed();
     }
 
     private boolean daysLeftToConcert(int days) {
