@@ -7,7 +7,8 @@ import kata.gildedrose.Item;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import static org.junit.Assert.assertEquals;
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.junit.Assert.assertThat;
 
 @RunWith(DataProviderRunner.class)
 public class GildedRoseTest {
@@ -15,14 +16,19 @@ public class GildedRoseTest {
     @DataProvider
     public static Object[][] provideItems() {
         return new Object[][] {
-                {new StandardItem(10, 6), new StandardItem(9, 5)}
+                {"standard item - sellIn and quality lower at the end of each day",
+                        new StandardItem(10, 6), new StandardItem(9, 5)},
+                {"standard item - once the sell date has passed quality degrades twice as fast",
+                        new StandardItem(0, 6), new StandardItem(-1, 4)},
+                {"standard item - quality is never negative",
+                        new StandardItem(10, 0), new StandardItem(9, 0)}
         };
     }
 
     @Test
     @UseDataProvider( "provideItems" )
-    public void testEndOfDay(Item item, Item expected) throws Exception {
+    public void testEndOfDay(String scenario, Item item, Item expected) throws Exception {
         item.endOfDay();
-        assertEquals(expected, item);
+        assertThat(scenario, item, equalTo(expected));
     }
 }
