@@ -10,22 +10,30 @@ public class BackstagePass  extends Item {
 
     @Override
     protected void endOfDayQuality() {
-        if (getSellIn() < 0) {
+        if (hasConcertDayPassed()) {
             zeroQuality();
             return;
         }
 
-        if (getSellIn() <= 5) {
+        if (daysLeftToConcert(5)) {
             increaseQualityBy(3);
             return;
         }
 
-        if (getSellIn() <= 10) {
+        if (daysLeftToConcert(10)) {
             increaseQualityBy(2);
             return;
         }
 
         increaseQualityBy(1);
+    }
+
+    private boolean hasConcertDayPassed() {
+        return getSellIn() < 0;
+    }
+
+    private boolean daysLeftToConcert(int days) {
+        return getSellIn() <= days;
     }
 
     @Override
