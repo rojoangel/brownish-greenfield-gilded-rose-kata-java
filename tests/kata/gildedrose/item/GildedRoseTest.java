@@ -25,7 +25,18 @@ public class GildedRoseTest {
                 {"aged brie - quality increases the older it gets",
                         new AgedBrie(10, 7), new AgedBrie(9, 8)},
                 {"aged brie - quality is never greater than 50",
-                        new AgedBrie(10, 50), new AgedBrie(9, 50)}
+                        new AgedBrie(10, 50), new AgedBrie(9, 50)},
+                {"sulfuras - never has to be sold",
+                        new Sulfuras(99), new Sulfuras(99)},
+                {"sulfuras - quality is 80 and never alters",
+                        new Sulfuras(99), new Item("Sulfuras", 99, 80) {
+                            @Override
+                            protected void endOfDayQuality() {}
+
+                            @Override
+                            protected void endOfDaySellIn() {}
+                        }
+                }
         };
     }
 
