@@ -64,4 +64,26 @@ public abstract class Item {
 
     protected abstract void endOfDaySellIn();
 
+    @Override
+    public String toString() {
+        return "Item{" +
+                "item=" + item +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Item)) return false;
+
+        Item item1 = (Item) o;
+
+        return item != null ? item.equals(item1.item) : item1.item == null;
+
+    }
+
+    @Override
+    public int hashCode() {
+        return item != null ? item.hashCode() : 0;
+    }
 }
