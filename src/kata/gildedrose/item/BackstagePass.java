@@ -22,8 +22,12 @@ public class BackstagePass  extends Item {
             return;
         }
 
-        increaseQuality(FACTOR_2);
+        if (getSellIn() <= 10) {
+            increaseQuality(FACTOR_2);
+            return;
+        }
 
+        increaseQuality(FACTOR_1);
     }
 
     @Override

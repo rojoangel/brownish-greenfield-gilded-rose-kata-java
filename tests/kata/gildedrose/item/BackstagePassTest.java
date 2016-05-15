@@ -8,6 +8,14 @@ import static org.junit.Assert.*;
 public class BackstagePassTest {
 
     @Test
+    public void qualityIncreases() throws Exception {
+        int initialQuality = 27;
+        Item item = new BackstagePass(15, initialQuality);
+        item.endOfDay();
+        assertTrue(item.getQuality() == initialQuality + 1);
+    }
+
+    @Test
     public void qualityIncreasesBy2WhenSellInIs10DaysOrLess () throws Exception {
         int initialQuality = 27;
         Item item = new BackstagePass(10, initialQuality);
