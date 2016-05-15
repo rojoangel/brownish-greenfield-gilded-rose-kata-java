@@ -78,12 +78,8 @@ public abstract class Item {
 
         Item item1 = (Item) o;
 
-        return item != null ? item.equals(item1.item) : item1.item == null;
-
-    }
-
-    @Override
-    public int hashCode() {
-        return item != null ? item.hashCode() : 0;
+        if (item.sellIn != item1.item.sellIn) return false;
+        if (item.quality != item1.item.quality) return false;
+        return item.name.equals(item1.item.name);
     }
 }
