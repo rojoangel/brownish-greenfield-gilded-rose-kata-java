@@ -44,7 +44,7 @@ public abstract class Item {
     }
 
     protected boolean hasSellByDatePassed() {
-        return this.item.sellIn >= 0;
+        return this.item.sellIn < 0;
     }
 
     public void endOfDay() {

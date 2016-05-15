@@ -10,9 +10,9 @@ public class StandardItem extends Item {
 
     protected void endOfDayQuality() {
         if (hasSellByDatePassed()) {
-            decreaseQualityBy(1);
-        } else {
             decreaseQualityBy(2);
+        } else {
+            decreaseQualityBy(1);
         }
     }
 
