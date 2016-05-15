@@ -3,8 +3,6 @@ package kata.gildedrose;
 
 public abstract class Item {
 
-    protected static final int FACTOR_1 = 1;
-    protected static final int FACTOR_2 = 2;
     private static final int SELL_IN_STEP = 1;
     private static final int QUALITY_STEP = 1;
 
@@ -37,7 +35,7 @@ public abstract class Item {
         this.item.sellIn = newSellIn;
     }
 
-    protected void increaseQuality(int factor) {
+    protected void increaseQualityBy(int factor) {
         setQuality(getQuality() + factor * QUALITY_STEP);
     }
 

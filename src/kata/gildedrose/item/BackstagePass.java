@@ -4,8 +4,6 @@ import kata.gildedrose.Item;
 
 public class BackstagePass  extends Item {
 
-    private static final int FACTOR_3 = 3;
-
     public BackstagePass(int sellIn, int quality) {
         super("Backstage Pass", sellIn, quality);
     }
@@ -18,16 +16,16 @@ public class BackstagePass  extends Item {
         }
 
         if (getSellIn() <= 5) {
-            increaseQuality(FACTOR_3);
+            increaseQualityBy(3);
             return;
         }
 
         if (getSellIn() <= 10) {
-            increaseQuality(FACTOR_2);
+            increaseQualityBy(2);
             return;
         }
 
-        increaseQuality(FACTOR_1);
+        increaseQualityBy(1);
     }
 
     @Override

@@ -10,7 +10,7 @@ public class AgedBrie extends Item {
 
     @Override
     protected void calculateQuality() {
-        increaseQuality(FACTOR_1);
+        increaseQualityBy(1);
     }
 
     @Override
