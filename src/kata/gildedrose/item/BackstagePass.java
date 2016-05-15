@@ -29,11 +29,11 @@ public class BackstagePass  extends Item {
     }
 
     private boolean hasConcertDayPassed() {
-        return getSellIn() < 0;
+        return this.item.sellIn < 0;
     }
 
     private boolean daysLeftToConcert(int days) {
-        return getSellIn() <= days;
+        return this.item.sellIn <= days;
     }
 
     @Override

@@ -12,14 +12,6 @@ public abstract class Item {
         this.item = new com.gildedrose.Item(name, sellIn, quality);
     }
 
-    public int getSellIn() {
-        return this.item.sellIn;
-    }
-
-    public int getQuality() {
-        return this.item.quality;
-    }
-
     private void setQuality(int newQuality) {
         if (newQuality < 0) {
             newQuality = 0;
@@ -36,11 +28,11 @@ public abstract class Item {
     }
 
     protected void increaseQualityBy(int factor) {
-        setQuality(getQuality() + factor * QUALITY_STEP);
+        setQuality(this.item.quality + factor * QUALITY_STEP);
     }
 
     protected void decreaseQualityBy(int factor) {
-        setQuality(getQuality() - factor * QUALITY_STEP);
+        setQuality(this.item.quality - factor * QUALITY_STEP);
     }
 
     protected void zeroQuality() {
@@ -48,7 +40,7 @@ public abstract class Item {
     }
 
     protected void decreaseSellIn() {
-        setSellIn(getSellIn() - SELL_IN_STEP);
+        setSellIn(this.item.sellIn - SELL_IN_STEP);
     }
 
     protected boolean hasSellByDatePassed() {
