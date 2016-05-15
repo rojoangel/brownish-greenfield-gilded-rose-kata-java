@@ -21,7 +21,11 @@ public class GildedRoseTest {
                 {"standard item - once the sell date has passed quality degrades twice as fast",
                         new StandardItem(0, 6), new StandardItem(-1, 4)},
                 {"standard item - quality is never negative",
-                        new StandardItem(10, 0), new StandardItem(9, 0)}
+                        new StandardItem(10, 0), new StandardItem(9, 0)},
+                {"aged brie - quality increases the older it gets",
+                        new AgedBrie(10, 7), new AgedBrie(9, 8)},
+                {"aged brie - quality is never greater than 50",
+                        new AgedBrie(10, 50), new AgedBrie(9, 50)}
         };
     }
 
