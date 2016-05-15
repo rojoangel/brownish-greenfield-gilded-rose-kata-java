@@ -39,7 +39,7 @@ public abstract class Item {
         setQuality(getQuality() + factor * QUALITY_STEP);
     }
 
-    protected void decreaseQuality(int factor) {
+    protected void decreaseQualityBy(int factor) {
         setQuality(getQuality() - factor * QUALITY_STEP);
     }
 
