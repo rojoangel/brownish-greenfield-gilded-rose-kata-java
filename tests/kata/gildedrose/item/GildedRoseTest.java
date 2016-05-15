@@ -29,13 +29,7 @@ public class GildedRoseTest {
                 {"sulfuras - never has to be sold",
                         new Sulfuras(99), new Sulfuras(99)},
                 {"sulfuras - quality is 80 and never alters",
-                        new Sulfuras(99), new Item("Sulfuras", 99, 80) {
-                            @Override
-                            protected void endOfDayQuality() {}
-
-                            @Override
-                            protected void endOfDaySellIn() {}
-                }},
+                        new Sulfuras(99), buildItem("Sulfuras", 99, 80)},
                 {"backstage pass - quality increases",
                         new BackstagePass(15, 27), new BackstagePass(14, 28)},
                 {"backstage pass - quality increases by 2 when sellIn is 10 days or less",
@@ -45,6 +39,16 @@ public class GildedRoseTest {
                 {"backstage pass - quality drops to zero after theConcert",
                         new BackstagePass(0, 27), new BackstagePass(-1, 0)}
         };
+    }
+
+    private static Item buildItem(final String name, final int sellIn, final int quality) {
+        return new Item(name, sellIn, quality) {
+            @Override
+            protected void endOfDayQuality() {}
+
+            @Override
+            protected void endOfDaySellIn() {}
+};
     }
 
     @Test
