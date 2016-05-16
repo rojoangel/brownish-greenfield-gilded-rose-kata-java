@@ -40,7 +40,9 @@ public class GildedRoseTest {
                 {"backstage pass - quality drops to zero after theConcert",
                         new BackstagePass(0, 27), buildItem("Backstage Pass", -1, 0)},
                 {"conjured standard item - quality degrades twice as fast",
-                        new Conjured(new StandardItem(10, 6)), new Conjured(buildItem("An standard item", 9, 4))}
+                        new Conjured(new StandardItem(10, 6)), new Conjured(buildItem("An standard item", 9, 4))},
+                {"conjured standard item - once the sell date has passed quality degrades twice as fast",
+                        new Conjured(new StandardItem(0, 6)), new Conjured(buildItem("An standard item", -1, 2))},
 
         };
     }
