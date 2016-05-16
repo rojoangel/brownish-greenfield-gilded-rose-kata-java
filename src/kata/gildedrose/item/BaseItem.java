@@ -3,7 +3,7 @@ package kata.gildedrose.item;
 
 import kata.gildedrose.Item;
 
-public abstract class BaseItem implements Item {
+abstract class BaseItem implements Item {
 
     private static final int SELL_IN_STEP = 1;
     private static final int QUALITY_STEP = 1;

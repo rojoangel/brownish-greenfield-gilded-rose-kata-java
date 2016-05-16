@@ -1,6 +1,6 @@
 package kata.gildedrose.item;
 
-public class StandardItem extends BaseItem {
+class StandardItem extends BaseItem {
 
     static final String STANDARD_ITEM = "Standard Item";
 

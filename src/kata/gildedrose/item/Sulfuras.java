@@ -1,6 +1,6 @@
 package kata.gildedrose.item;
 
-public class Sulfuras extends BaseItem {
+class Sulfuras extends BaseItem {
 
     public static final int QUALITY = 80;
     static final String SULFURAS = "Sulfuras";

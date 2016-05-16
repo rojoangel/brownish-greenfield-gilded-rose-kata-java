@@ -1,6 +1,6 @@
 package kata.gildedrose.item;
 
-public class BackstagePass  extends BaseItem {
+class BackstagePass  extends BaseItem {
 
     static final String BACKSTAGE_PASS = "Backstage Pass";
 

@@ -2,7 +2,7 @@ package kata.gildedrose.item;
 
 import kata.gildedrose.Item;
 
-public class Conjured implements Item {
+class Conjured implements Item {
 
     static final String CONJURED = "Conjured";
 

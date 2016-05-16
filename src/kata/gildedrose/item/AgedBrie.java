@@ -1,6 +1,6 @@
 package kata.gildedrose.item;
 
-public class AgedBrie extends BaseItem {
+class AgedBrie extends BaseItem {
 
     static final String AGED_BRIE = "Aged Brie";
 
