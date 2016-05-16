@@ -1,8 +1,8 @@
 package kata.gildedrose.item;
 
-import kata.gildedrose.Item;
+import kata.gildedrose.AdaptedItem;
 
-public class Sulfuras extends Item {
+public class Sulfuras extends AdaptedItem {
 
     public static final int QUALITY = 80;
 

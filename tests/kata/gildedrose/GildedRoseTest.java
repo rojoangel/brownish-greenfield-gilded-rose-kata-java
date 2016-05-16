@@ -42,8 +42,8 @@ public class GildedRoseTest {
         };
     }
 
-    private static Item buildItem(final String name, final int sellIn, final int quality) {
-        return new Item(name, sellIn, quality) {
+    private static AdaptedItem buildItem(final String name, final int sellIn, final int quality) {
+        return new AdaptedItem(name, sellIn, quality) {
             @Override
             protected void endOfDayQuality() {}
 
@@ -54,7 +54,7 @@ public class GildedRoseTest {
 
     @Test
     @UseDataProvider( "provideItems" )
-    public void testEndOfDay(String scenario, Item item, Item expected) throws Exception {
+    public void testEndOfDay(String scenario, AdaptedItem item, AdaptedItem expected) throws Exception {
         item.endOfDay();
         assertThat(scenario, item, equalTo(expected));
     }

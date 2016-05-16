@@ -1,8 +1,8 @@
 package kata.gildedrose.item;
 
-import kata.gildedrose.Item;
+import kata.gildedrose.AdaptedItem;
 
-public class AgedBrie extends Item {
+public class AgedBrie extends AdaptedItem {
 
     public AgedBrie(int sellIn, int quality) {
         super("Aged Brie", sellIn, quality);
