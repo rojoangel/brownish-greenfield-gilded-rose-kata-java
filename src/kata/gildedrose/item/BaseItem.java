@@ -3,12 +3,6 @@ package kata.gildedrose.item;
 
 import kata.gildedrose.Item;
 
-import static kata.gildedrose.item.AgedBrie.AGED_BRIE;
-import static kata.gildedrose.item.BackstagePass.BACKSTAGE_PASS;
-import static kata.gildedrose.item.Conjured.CONJURED;
-import static kata.gildedrose.item.StandardItem.STANDARD_ITEM;
-import static kata.gildedrose.item.Sulfuras.SULFURAS;
-
 public abstract class BaseItem implements Item {
 
     private static final int SELL_IN_STEP = 1;
