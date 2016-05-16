@@ -12,11 +12,22 @@ public class ItemFactory {
 
     public static Item build(String name, int sellIn, int quality) {
         if (name.startsWith(CONJURED)) {
-            String itemName = name.substring(CONJURED.length() + 1);
-            return new Conjured(buildItem(itemName, sellIn, quality));
+            return new Conjured(
+                    buildItem(
+                            extractConjuredItemName(name),
+                            sellIn,
+                            quality
+                    ));
         } else {
-            return buildItem(name, sellIn, quality);
+            return buildItem(
+                    name,
+                    sellIn,
+                    quality);
         }
+    }
+
+    private static String extractConjuredItemName(String name) {
+        return name.substring(CONJURED.length() + 1);
     }
 
     private static Item buildItem(String name, int sellIn, int quality) {
