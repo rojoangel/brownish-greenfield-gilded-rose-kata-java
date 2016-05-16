@@ -1,10 +1,12 @@
-package kata.gildedrose;
+package kata.gildedrose.item;
+
+import kata.gildedrose.Item;
 
 public class Conjured implements Item {
 
     private final Item item;
 
-    public Conjured(Item item) {
+    Conjured(Item item) {
         this.item = item;
     }
 

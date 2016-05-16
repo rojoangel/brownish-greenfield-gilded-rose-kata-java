@@ -1,7 +1,6 @@
 package kata.gildedrose.item;
 
 
-import kata.gildedrose.Conjured;
 import kata.gildedrose.Item;
 
 import static kata.gildedrose.item.AgedBrie.AGED_BRIE;
