@@ -65,4 +65,14 @@ public abstract class BaseItem implements Item {
         if (item.quality != item1.item.quality) return false;
         return item.name.equals(item1.item.name);
     }
+
+    public static Item buildItem(String name, int sellIn, int quality) {
+        return new BaseItem(name, sellIn, quality) {
+            @Override
+            public void endOfDayQuality() {}
+
+            @Override
+            public void endOfDaySellIn() {}
+        };
+    }
 }

@@ -18,78 +18,82 @@ public class GildedRoseTest {
 
     @DataProvider
     public static Object[][] provideItems() {
+        final int sellIn = -1;
+        final int sellIn1 = -1;
+        final int sellIn2 = -1;
+        final int sellIn3 = -1;
         return new Object[][] {
                 {"standard item - sellIn and quality lower at the end of each day",
                         new StandardItem(10, 6),
-                        buildItem("An standard item", 9, 5)},
+                        BaseItem.buildItem("An standard item", 9, 5)},
 
                 {"standard item - once the sell date has passed quality degrades twice as fast",
                         new StandardItem(0, 6),
-                        buildItem("An standard item", -1, 4)},
+                        BaseItem.buildItem("An standard item", sellIn3, 4)},
 
                 {"standard item - quality is never negative",
                         new StandardItem(10, 0),
-                        buildItem("An standard item", 9, 0)},
+                        BaseItem.buildItem("An standard item", 9, 0)},
 
                 {"aged brie - quality increases the older it gets",
                         new AgedBrie(10, 7),
-                        buildItem("Aged Brie", 9, 8)},
+                        BaseItem.buildItem("Aged Brie", 9, 8)},
 
                 {"aged brie - quality is never greater than 50",
                         new AgedBrie(10, 50),
-                        buildItem("Aged Brie", 9, 50)},
+                        BaseItem.buildItem("Aged Brie", 9, 50)},
 
                 {"sulfuras - quality is 80 and never has to be sold",
                         new Sulfuras(99),
-                        buildItem("Sulfuras", 99, 80)},
+                        BaseItem.buildItem("Sulfuras", 99, 80)},
 
                 {"backstage pass - quality increases",
                         new BackstagePass(15, 27),
-                        buildItem("Backstage Pass", 14, 28)},
+                        BaseItem.buildItem("Backstage Pass", 14, 28)},
 
                 {"backstage pass - quality increases by 2 when sellIn is 10 days or less",
                         new BackstagePass(10, 27),
-                        buildItem("Backstage Pass", 9, 29)},
+                        BaseItem.buildItem("Backstage Pass", 9, 29)},
 
                 {"backstage pass - quality increases by 3 when sellIn is 5 days or less",
                         new BackstagePass(6, 27),
-                        buildItem("Backstage Pass", 5, 30)},
+                        BaseItem.buildItem("Backstage Pass", 5, 30)},
 
                 {"backstage pass - quality drops to zero after theConcert",
                         new BackstagePass(0, 27),
-                        buildItem("Backstage Pass", -1, 0)},
+                        BaseItem.buildItem("Backstage Pass", sellIn2, 0)},
 
                 {"conjured standard item - quality degrades twice as fast",
                         new Conjured(new StandardItem(10, 6)),
-                        new Conjured(buildItem("An standard item", 9, 4))},
+                        new Conjured(BaseItem.buildItem("An standard item", 9, 4))},
 
                 {"conjured standard item - once the sell date has passed quality degrades twice as fast",
                         new Conjured(new StandardItem(0, 6)),
-                        new Conjured(buildItem("An standard item", -1, 2))},
+                        new Conjured(BaseItem.buildItem("An standard item", sellIn1, 2))},
 
                 {"conjured aged brie - quality increases the older it gets twice as fast",
                         new Conjured(new AgedBrie(10, 7)),
-                        new Conjured(buildItem("Aged Brie", 9, 9))},
+                        new Conjured(BaseItem.buildItem("Aged Brie", 9, 9))},
 
                 {"conjured sulfuras - quality is 80 and never has to be sold",
                         new Conjured(new Sulfuras(99)),
-                        new Conjured(buildItem("Sulfuras", 99, 80))},
+                        new Conjured(BaseItem.buildItem("Sulfuras", 99, 80))},
 
                 {"conjured backstage pass - quality increases twice as fast",
                         new Conjured(new BackstagePass(15, 27)),
-                        new Conjured(buildItem("Backstage Pass", 14, 29))},
+                        new Conjured(BaseItem.buildItem("Backstage Pass", 14, 29))},
 
                 {"conjured backstage pass - quality increases when sellIn is 10 days or less twice as fast",
                         new Conjured(new BackstagePass(10, 27)),
-                        new Conjured(buildItem("Backstage Pass", 9, 31))},
+                        new Conjured(BaseItem.buildItem("Backstage Pass", 9, 31))},
 
                 {"conjured backstage pass - quality increases when sellIn is 5 days or less twice as fast",
                         new Conjured(new BackstagePass(6, 27)),
-                        new Conjured(buildItem("Backstage Pass", 5, 33))},
+                        new Conjured(BaseItem.buildItem("Backstage Pass", 5, 33))},
 
                 {"conjured backstage pass - quality drops to zero after theConcert",
                         new Conjured(new BackstagePass(0, 27)),
-                        new Conjured(buildItem("Backstage Pass", -1, 0))}
+                        new Conjured(BaseItem.buildItem("Backstage Pass", sellIn, 0))}
         };
     }
 
@@ -114,17 +118,8 @@ public class GildedRoseTest {
 
         gildedRose.endOfDay();
 
-        assertThat(standardItem, equalTo(buildItem("An standard item", 9, 5)));
-        assertThat(conjuredBackStagePass, equalTo(new Conjured(buildItem("Backstage Pass", -1, 0))));
-    }
-
-    private static Item buildItem(final String name, final int sellIn, final int quality) {
-        return new BaseItem(name, sellIn, quality) {
-            @Override
-            public void endOfDayQuality() {}
-
-            @Override
-            public void endOfDaySellIn() {}
-        };
+        assertThat(standardItem, equalTo(BaseItem.buildItem("An standard item", 9, 5)));
+        final int sellIn = -1;
+        assertThat(conjuredBackStagePass, equalTo(new Conjured(BaseItem.buildItem("Backstage Pass", sellIn, 0))));
     }
 }
