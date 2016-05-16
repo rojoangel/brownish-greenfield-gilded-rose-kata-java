@@ -1,7 +1,7 @@
 package kata.gildedrose;
 
 
-public abstract class AdaptedItem {
+public abstract class AdaptedItem implements Item {
 
     private static final int SELL_IN_STEP = 1;
     private static final int QUALITY_STEP = 1;
@@ -47,6 +47,7 @@ public abstract class AdaptedItem {
         return this.item.sellIn < 0;
     }
 
+    @Override
     public void endOfDay() {
         endOfDaySellIn();
         endOfDayQuality();
