@@ -1,7 +1,5 @@
 package kata.gildedrose.item;
 
-import kata.gildedrose.BaseItem;
-
 public class AgedBrie extends BaseItem {
 
     public AgedBrie(int sellIn, int quality) {

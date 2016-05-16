@@ -1,7 +1,5 @@
 package kata.gildedrose.item;
 
-import kata.gildedrose.BaseItem;
-
 public class BackstagePass  extends BaseItem {
 
     public BackstagePass(int sellIn, int quality) {

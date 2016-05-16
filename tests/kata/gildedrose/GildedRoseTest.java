@@ -3,10 +3,7 @@ package kata.gildedrose;
 import com.tngtech.java.junit.dataprovider.DataProvider;
 import com.tngtech.java.junit.dataprovider.DataProviderRunner;
 import com.tngtech.java.junit.dataprovider.UseDataProvider;
-import kata.gildedrose.item.AgedBrie;
-import kata.gildedrose.item.BackstagePass;
-import kata.gildedrose.item.StandardItem;
-import kata.gildedrose.item.Sulfuras;
+import kata.gildedrose.item.*;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 

@@ -1,7 +1,7 @@
-package kata.gildedrose;
+package kata.gildedrose.item;
 
 
-import kata.gildedrose.item.StandardItem;
+import kata.gildedrose.Item;
 
 public abstract class BaseItem implements Item {
 

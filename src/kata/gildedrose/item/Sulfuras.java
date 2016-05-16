@@ -1,7 +1,5 @@
 package kata.gildedrose.item;
 
-import kata.gildedrose.BaseItem;
-
 public class Sulfuras extends BaseItem {
 
     public static final int QUALITY = 80;
