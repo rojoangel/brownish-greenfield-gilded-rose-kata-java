@@ -5,7 +5,7 @@ import kata.gildedrose.Item;
 
 import static kata.gildedrose.item.AgedBrie.AGED_BRIE;
 import static kata.gildedrose.item.BackstagePass.BACKSTAGE_PASS;
-import static kata.gildedrose.item.StandardItem.AN_STANDARD_ITEM;
+import static kata.gildedrose.item.StandardItem.STANDARD_ITEM;
 import static kata.gildedrose.item.Sulfuras.SULFURAS;
 
 public abstract class BaseItem implements Item {
@@ -75,7 +75,7 @@ public abstract class BaseItem implements Item {
 
     public static Item buildItem(String name, int sellIn, int quality) {
         switch (name) {
-            case AN_STANDARD_ITEM:
+            case STANDARD_ITEM:
                 return new StandardItem(sellIn, quality);
             case AGED_BRIE:
                 return new AgedBrie(sellIn, quality);

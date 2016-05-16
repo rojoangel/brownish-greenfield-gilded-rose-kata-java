@@ -21,16 +21,16 @@ public class GildedRoseTest {
         final int sellIn3 = -1;
         return new Object[][] {
                 {"standard item - sellIn and quality lower at the end of each day",
-                        BaseItem.buildItem("An standard item", 10, 6),
-                        BaseItem.buildItem("An standard item", 9, 5)},
+                        BaseItem.buildItem("Standard Item", 10, 6),
+                        BaseItem.buildItem("Standard Item", 9, 5)},
 
                 {"standard item - once the sell date has passed quality degrades twice as fast",
-                        BaseItem.buildItem("An standard item", 0, 6),
-                        BaseItem.buildItem("An standard item", sellIn3, 4)},
+                        BaseItem.buildItem("Standard Item", 0, 6),
+                        BaseItem.buildItem("Standard Item", sellIn3, 4)},
 
                 {"standard item - quality is never negative",
-                        BaseItem.buildItem("An standard item", 10, 0),
-                        BaseItem.buildItem("An standard item", 9, 0)},
+                        BaseItem.buildItem("Standard Item", 10, 0),
+                        BaseItem.buildItem("Standard Item", 9, 0)},
 
                 {"aged brie - quality increases the older it gets",
                         BaseItem.buildItem("Aged Brie", 10, 7),
@@ -61,12 +61,12 @@ public class GildedRoseTest {
                         BaseItem.buildItem("Backstage Pass", sellIn2, 0)},
 
                 {"conjured standard item - quality degrades twice as fast",
-                        new Conjured(BaseItem.buildItem("An standard item", 10, 6)),
-                        new Conjured(BaseItem.buildItem("An standard item", 9, 4))},
+                        new Conjured(BaseItem.buildItem("Standard Item", 10, 6)),
+                        new Conjured(BaseItem.buildItem("Standard Item", 9, 4))},
 
                 {"conjured standard item - once the sell date has passed quality degrades twice as fast",
-                        new Conjured(BaseItem.buildItem("An standard item", 0, 6)),
-                        new Conjured(BaseItem.buildItem("An standard item", sellIn1, 2))},
+                        new Conjured(BaseItem.buildItem("Standard Item", 0, 6)),
+                        new Conjured(BaseItem.buildItem("Standard Item", sellIn1, 2))},
 
                 {"conjured aged brie - quality increases the older it gets twice as fast",
                         new Conjured(BaseItem.buildItem("Aged Brie", 10, 7)),
@@ -107,7 +107,7 @@ public class GildedRoseTest {
     public void testEndOfDayWithMultipleItems() throws Exception {
         GildedRose gildedRose = new GildedRose();
 
-        Item standardItem = BaseItem.buildItem("An standard item", 10, 6);
+        Item standardItem = BaseItem.buildItem("Standard Item", 10, 6);
         gildedRose.add(standardItem);
 
         Item conjuredBackStagePass = new Conjured(BaseItem.buildItem("Backstage Pass", 0, 27));
@@ -115,7 +115,7 @@ public class GildedRoseTest {
 
         gildedRose.endOfDay();
 
-        assertThat(standardItem, equalTo(BaseItem.buildItem("An standard item", 9, 5)));
+        assertThat(standardItem, equalTo(BaseItem.buildItem("Standard Item", 9, 5)));
         final int sellIn = -1;
         assertThat(conjuredBackStagePass, equalTo(new Conjured(BaseItem.buildItem("Backstage Pass", sellIn, 0))));
     }
