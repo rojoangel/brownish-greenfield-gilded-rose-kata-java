@@ -96,8 +96,9 @@ public class GildedRoseTest {
     @Test
     @UseDataProvider( "provideItems" )
     public void testEndOfDay(String scenario, Item item, Item expected) throws Exception {
-        item.endOfDay();
-        assertThat(scenario, item, equalTo(expected));
+        GildedRose gildedRose = new GildedRose(item);
+        Item endOfDayItem = gildedRose.endOfDay();
+        assertThat(scenario, endOfDayItem, equalTo(expected));
     }
 
     private static Item buildItem(final String name, final int sellIn, final int quality) {
