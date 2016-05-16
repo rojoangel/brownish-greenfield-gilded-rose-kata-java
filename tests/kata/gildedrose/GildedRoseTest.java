@@ -3,7 +3,7 @@ package kata.gildedrose;
 import com.tngtech.java.junit.dataprovider.DataProvider;
 import com.tngtech.java.junit.dataprovider.DataProviderRunner;
 import com.tngtech.java.junit.dataprovider.UseDataProvider;
-import kata.gildedrose.item.*;
+import kata.gildedrose.item.ItemFactory;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
