@@ -84,13 +84,7 @@ public abstract class BaseItem implements Item {
             case BACKSTAGE_PASS:
                 return new BackstagePass(sellIn, quality);
             default:
-                return new BaseItem(name, sellIn, quality) {
-                    @Override
-                    public void endOfDayQuality() {}
-
-                    @Override
-                    public void endOfDaySellIn() {}
-                };
+                throw new RuntimeException("Unknown item name : " + name);
         }
     }
 }
