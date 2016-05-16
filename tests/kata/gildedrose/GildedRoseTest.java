@@ -24,15 +24,15 @@ public class GildedRoseTest {
         final int sellIn3 = -1;
         return new Object[][] {
                 {"standard item - sellIn and quality lower at the end of each day",
-                        new StandardItem(10, 6),
+                        BaseItem.buildItem("An standard item", 10, 6),
                         BaseItem.buildItem("An standard item", 9, 5)},
 
                 {"standard item - once the sell date has passed quality degrades twice as fast",
-                        new StandardItem(0, 6),
+                        BaseItem.buildItem("An standard item", 0, 6),
                         BaseItem.buildItem("An standard item", sellIn3, 4)},
 
                 {"standard item - quality is never negative",
-                        new StandardItem(10, 0),
+                        BaseItem.buildItem("An standard item", 10, 0),
                         BaseItem.buildItem("An standard item", 9, 0)},
 
                 {"aged brie - quality increases the older it gets",
@@ -64,11 +64,11 @@ public class GildedRoseTest {
                         BaseItem.buildItem("Backstage Pass", sellIn2, 0)},
 
                 {"conjured standard item - quality degrades twice as fast",
-                        new Conjured(new StandardItem(10, 6)),
+                        new Conjured(BaseItem.buildItem("An standard item", 10, 6)),
                         new Conjured(BaseItem.buildItem("An standard item", 9, 4))},
 
                 {"conjured standard item - once the sell date has passed quality degrades twice as fast",
-                        new Conjured(new StandardItem(0, 6)),
+                        new Conjured(BaseItem.buildItem("An standard item", 0, 6)),
                         new Conjured(BaseItem.buildItem("An standard item", sellIn1, 2))},
 
                 {"conjured aged brie - quality increases the older it gets twice as fast",
@@ -110,7 +110,7 @@ public class GildedRoseTest {
     public void testEndOfDayWithMultipleItems() throws Exception {
         GildedRose gildedRose = new GildedRose();
 
-        Item standardItem = new StandardItem(10, 6);
+        Item standardItem = BaseItem.buildItem("An standard item", 10, 6);
         gildedRose.add(standardItem);
 
         Item conjuredBackStagePass = new Conjured(new BackstagePass(0, 27));

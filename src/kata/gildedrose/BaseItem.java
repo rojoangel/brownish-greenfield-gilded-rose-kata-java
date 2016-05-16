@@ -1,6 +1,8 @@
 package kata.gildedrose;
 
 
+import kata.gildedrose.item.StandardItem;
+
 public abstract class BaseItem implements Item {
 
     private static final int SELL_IN_STEP = 1;
@@ -67,12 +69,17 @@ public abstract class BaseItem implements Item {
     }
 
     public static Item buildItem(String name, int sellIn, int quality) {
-        return new BaseItem(name, sellIn, quality) {
-            @Override
-            public void endOfDayQuality() {}
+        switch (name) {
+            case "An standard item":
+                return new StandardItem(sellIn, quality);
+            default:
+                return new BaseItem(name, sellIn, quality) {
+                    @Override
+                    public void endOfDayQuality() {}
 
-            @Override
-            public void endOfDaySellIn() {}
-        };
+                    @Override
+                    public void endOfDaySellIn() {}
+                };
+        }
     }
 }
