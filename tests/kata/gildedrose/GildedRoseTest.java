@@ -21,76 +21,76 @@ public class GildedRoseTest {
         final int sellIn3 = -1;
         return new Object[][] {
                 {"standard item - sellIn and quality lower at the end of each day",
-                        BaseItem.buildItem("Standard Item", 10, 6),
-                        BaseItem.buildItem("Standard Item", 9, 5)},
+                        Factory.buildItem("Standard Item", 10, 6),
+                        Factory.buildItem("Standard Item", 9, 5)},
 
                 {"standard item - once the sell date has passed quality degrades twice as fast",
-                        BaseItem.buildItem("Standard Item", 0, 6),
-                        BaseItem.buildItem("Standard Item", sellIn3, 4)},
+                        Factory.buildItem("Standard Item", 0, 6),
+                        Factory.buildItem("Standard Item", sellIn3, 4)},
 
                 {"standard item - quality is never negative",
-                        BaseItem.buildItem("Standard Item", 10, 0),
-                        BaseItem.buildItem("Standard Item", 9, 0)},
+                        Factory.buildItem("Standard Item", 10, 0),
+                        Factory.buildItem("Standard Item", 9, 0)},
 
                 {"aged brie - quality increases the older it gets",
-                        BaseItem.buildItem("Aged Brie", 10, 7),
-                        BaseItem.buildItem("Aged Brie", 9, 8)},
+                        Factory.buildItem("Aged Brie", 10, 7),
+                        Factory.buildItem("Aged Brie", 9, 8)},
 
                 {"aged brie - quality is never greater than 50",
-                        BaseItem.buildItem("Aged Brie", 10, 50),
-                        BaseItem.buildItem("Aged Brie", 9, 50)},
+                        Factory.buildItem("Aged Brie", 10, 50),
+                        Factory.buildItem("Aged Brie", 9, 50)},
 
                 {"sulfuras - quality is 80 and never has to be sold",
-                        BaseItem.buildItem("Sulfuras", 99, 80),
-                        BaseItem.buildItem("Sulfuras", 99, 80)},
+                        Factory.buildItem("Sulfuras", 99, 80),
+                        Factory.buildItem("Sulfuras", 99, 80)},
 
                 {"backstage pass - quality increases",
-                        BaseItem.buildItem("Backstage Pass", 15, 27),
-                        BaseItem.buildItem("Backstage Pass", 14, 28)},
+                        Factory.buildItem("Backstage Pass", 15, 27),
+                        Factory.buildItem("Backstage Pass", 14, 28)},
 
                 {"backstage pass - quality increases by 2 when sellIn is 10 days or less",
-                        BaseItem.buildItem("Backstage Pass", 10, 27),
-                        BaseItem.buildItem("Backstage Pass", 9, 29)},
+                        Factory.buildItem("Backstage Pass", 10, 27),
+                        Factory.buildItem("Backstage Pass", 9, 29)},
 
                 {"backstage pass - quality increases by 3 when sellIn is 5 days or less",
-                        BaseItem.buildItem("Backstage Pass", 6, 27),
-                        BaseItem.buildItem("Backstage Pass", 5, 30)},
+                        Factory.buildItem("Backstage Pass", 6, 27),
+                        Factory.buildItem("Backstage Pass", 5, 30)},
 
                 {"backstage pass - quality drops to zero after theConcert",
-                        BaseItem.buildItem("Backstage Pass", 0, 27),
-                        BaseItem.buildItem("Backstage Pass", sellIn2, 0)},
+                        Factory.buildItem("Backstage Pass", 0, 27),
+                        Factory.buildItem("Backstage Pass", sellIn2, 0)},
 
                 {"conjured standard item - quality degrades twice as fast",
-                        BaseItem.buildItem("Conjured Standard Item", 10, 6),
-                        BaseItem.buildItem("Conjured Standard Item", 9, 4)},
+                        Factory.buildItem("Conjured Standard Item", 10, 6),
+                        Factory.buildItem("Conjured Standard Item", 9, 4)},
 
                 {"conjured standard item - once the sell date has passed quality degrades twice as fast",
-                        BaseItem.buildItem("Conjured Standard Item", 0, 6),
-                        BaseItem.buildItem("Conjured Standard Item", sellIn1, 2)},
+                        Factory.buildItem("Conjured Standard Item", 0, 6),
+                        Factory.buildItem("Conjured Standard Item", sellIn1, 2)},
 
                 {"conjured aged brie - quality increases the older it gets twice as fast",
-                        BaseItem.buildItem("Conjured Aged Brie", 10, 7),
-                        BaseItem.buildItem("Conjured Aged Brie", 9, 9)},
+                        Factory.buildItem("Conjured Aged Brie", 10, 7),
+                        Factory.buildItem("Conjured Aged Brie", 9, 9)},
 
                 {"conjured sulfuras - quality is 80 and never has to be sold",
-                        BaseItem.buildItem("Conjured Sulfuras", 99, 80),
-                        BaseItem.buildItem("Conjured Sulfuras", 99, 80)},
+                        Factory.buildItem("Conjured Sulfuras", 99, 80),
+                        Factory.buildItem("Conjured Sulfuras", 99, 80)},
 
                 {"conjured backstage pass - quality increases twice as fast",
-                        BaseItem.buildItem("Conjured Backstage Pass", 15, 27),
-                        BaseItem.buildItem("Conjured Backstage Pass", 14, 29)},
+                        Factory.buildItem("Conjured Backstage Pass", 15, 27),
+                        Factory.buildItem("Conjured Backstage Pass", 14, 29)},
 
                 {"conjured backstage pass - quality increases when sellIn is 10 days or less twice as fast",
-                        BaseItem.buildItem("Conjured Backstage Pass", 10, 27),
-                        BaseItem.buildItem("Conjured Backstage Pass", 9, 31)},
+                        Factory.buildItem("Conjured Backstage Pass", 10, 27),
+                        Factory.buildItem("Conjured Backstage Pass", 9, 31)},
 
                 {"conjured backstage pass - quality increases when sellIn is 5 days or less twice as fast",
-                        BaseItem.buildItem("Conjured Backstage Pass", 6, 27),
-                        BaseItem.buildItem("Conjured Backstage Pass", 5, 33)},
+                        Factory.buildItem("Conjured Backstage Pass", 6, 27),
+                        Factory.buildItem("Conjured Backstage Pass", 5, 33)},
 
                 {"conjured backstage pass - quality drops to zero after theConcert",
-                        BaseItem.buildItem("Conjured Backstage Pass", 0, 27),
-                        BaseItem.buildItem("Conjured Backstage Pass", sellIn, 0)}
+                        Factory.buildItem("Conjured Backstage Pass", 0, 27),
+                        Factory.buildItem("Conjured Backstage Pass", sellIn, 0)}
         };
     }
 
@@ -107,16 +107,16 @@ public class GildedRoseTest {
     public void testEndOfDayWithMultipleItems() throws Exception {
         GildedRose gildedRose = new GildedRose();
 
-        Item standardItem = BaseItem.buildItem("Standard Item", 10, 6);
+        Item standardItem = Factory.buildItem("Standard Item", 10, 6);
         gildedRose.add(standardItem);
 
-        Item conjuredBackStagePass = BaseItem.buildItem("Conjured Backstage Pass", 0, 27);
+        Item conjuredBackStagePass = Factory.buildItem("Conjured Backstage Pass", 0, 27);
         gildedRose.add(conjuredBackStagePass);
 
         gildedRose.endOfDay();
 
-        assertThat(standardItem, equalTo(BaseItem.buildItem("Standard Item", 9, 5)));
+        assertThat(standardItem, equalTo(Factory.buildItem("Standard Item", 9, 5)));
         final int sellIn = -1;
-        assertThat(conjuredBackStagePass, equalTo(BaseItem.buildItem("Conjured Backstage Pass", sellIn, 0)));
+        assertThat(conjuredBackStagePass, equalTo(Factory.buildItem("Conjured Backstage Pass", sellIn, 0)));
     }
 }
