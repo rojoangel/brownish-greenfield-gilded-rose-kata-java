@@ -48,12 +48,6 @@ public abstract class AdaptedItem implements Item {
     }
 
     @Override
-    public void endOfDay() {
-        endOfDaySellIn();
-        endOfDayQuality();
-    }
-
-    @Override
     public String toString() {
         return "AdaptedItem{" +
                 "item=" + item +

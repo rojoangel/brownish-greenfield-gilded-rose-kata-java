@@ -9,12 +9,6 @@ public class Conjured implements Item {
     }
 
     @Override
-    public void endOfDay() {
-        endOfDaySellIn();
-        endOfDayQuality();
-    }
-
-    @Override
     public void endOfDayQuality() {
         item.endOfDayQuality();
         item.endOfDayQuality();
