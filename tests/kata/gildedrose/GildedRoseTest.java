@@ -15,10 +15,6 @@ public class GildedRoseTest {
 
     @DataProvider
     public static Object[][] provideItems() {
-        final int sellIn = -1;
-        final int sellIn1 = -1;
-        final int sellIn2 = -1;
-        final int sellIn3 = -1;
         return new Object[][] {
                 {"standard item - sellIn and quality lower at the end of each day",
                         Factory.buildItem("Standard Item", 10, 6),
@@ -26,7 +22,7 @@ public class GildedRoseTest {
 
                 {"standard item - once the sell date has passed quality degrades twice as fast",
                         Factory.buildItem("Standard Item", 0, 6),
-                        Factory.buildItem("Standard Item", sellIn3, 4)},
+                        Factory.buildItem("Standard Item", -1, 4)},
 
                 {"standard item - quality is never negative",
                         Factory.buildItem("Standard Item", 10, 0),
@@ -58,7 +54,7 @@ public class GildedRoseTest {
 
                 {"backstage pass - quality drops to zero after theConcert",
                         Factory.buildItem("Backstage Pass", 0, 27),
-                        Factory.buildItem("Backstage Pass", sellIn2, 0)},
+                        Factory.buildItem("Backstage Pass", -1, 0)},
 
                 {"conjured standard item - quality degrades twice as fast",
                         Factory.buildItem("Conjured Standard Item", 10, 6),
@@ -66,7 +62,7 @@ public class GildedRoseTest {
 
                 {"conjured standard item - once the sell date has passed quality degrades twice as fast",
                         Factory.buildItem("Conjured Standard Item", 0, 6),
-                        Factory.buildItem("Conjured Standard Item", sellIn1, 2)},
+                        Factory.buildItem("Conjured Standard Item", -1, 2)},
 
                 {"conjured aged brie - quality increases the older it gets twice as fast",
                         Factory.buildItem("Conjured Aged Brie", 10, 7),
@@ -90,7 +86,7 @@ public class GildedRoseTest {
 
                 {"conjured backstage pass - quality drops to zero after theConcert",
                         Factory.buildItem("Conjured Backstage Pass", 0, 27),
-                        Factory.buildItem("Conjured Backstage Pass", sellIn, 0)}
+                        Factory.buildItem("Conjured Backstage Pass", -1, 0)}
         };
     }
 
