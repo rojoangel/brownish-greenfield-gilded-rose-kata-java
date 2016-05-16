@@ -14,7 +14,7 @@ public class ItemFactory {
         if (isConjured(name)) {
             return new Conjured(
                     buildNormalItem(
-                            extractConjuredItemName(name),
+                            notConjuredItemNameFor(name),
                             sellIn,
                             quality
                     ));
@@ -30,7 +30,7 @@ public class ItemFactory {
         return name.startsWith(CONJURED);
     }
 
-    private static String extractConjuredItemName(String name) {
+    private static String notConjuredItemNameFor(String name) {
         return name.substring(CONJURED.length() + 1);
     }
 
