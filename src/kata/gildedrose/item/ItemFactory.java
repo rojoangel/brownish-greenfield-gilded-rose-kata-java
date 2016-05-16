@@ -8,18 +8,18 @@ import static kata.gildedrose.item.Conjured.CONJURED;
 import static kata.gildedrose.item.StandardItem.STANDARD_ITEM;
 import static kata.gildedrose.item.Sulfuras.SULFURAS;
 
-public class Factory {
+public class ItemFactory {
 
-    public static Item buildItem(String name, int sellIn, int quality) {
+    public static Item build(String name, int sellIn, int quality) {
         if (name.startsWith(CONJURED)) {
             String itemName = name.substring(CONJURED.length() + 1);
-            return new Conjured(constructItem(itemName, sellIn, quality));
+            return new Conjured(buildItem(itemName, sellIn, quality));
         } else {
-            return constructItem(name, sellIn, quality);
+            return buildItem(name, sellIn, quality);
         }
     }
 
-    private static Item constructItem(String name, int sellIn, int quality) {
+    private static Item buildItem(String name, int sellIn, int quality) {
         switch (name) {
             case STANDARD_ITEM:
                 return new StandardItem(sellIn, quality);
