@@ -1,15 +1,20 @@
 package kata.gildedrose;
 
-public class GildedRose {
-    private final Item item;
+import java.util.ArrayList;
+import java.util.List;
 
-    public GildedRose(Item item) {
-        this.item = item;
+public class GildedRose {
+
+    private final List<Item> items = new ArrayList<>();
+
+    public void add(Item item) {
+        items.add(item);
     }
 
-    public Item endOfDay() {
-        item.endOfDaySellIn();
-        item.endOfDayQuality();
-        return item;
+    public void endOfDay() {
+        for (Item item : items) {
+            item.endOfDaySellIn();
+            item.endOfDayQuality();
+        }
     }
 }

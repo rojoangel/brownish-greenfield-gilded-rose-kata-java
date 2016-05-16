@@ -96,9 +96,26 @@ public class GildedRoseTest {
     @Test
     @UseDataProvider( "provideItems" )
     public void testEndOfDay(String scenario, Item item, Item expected) throws Exception {
-        GildedRose gildedRose = new GildedRose(item);
-        Item endOfDayItem = gildedRose.endOfDay();
-        assertThat(scenario, endOfDayItem, equalTo(expected));
+        GildedRose gildedRose = new GildedRose();
+        gildedRose.add(item);
+        gildedRose.endOfDay();
+        assertThat(scenario, item, equalTo(expected));
+    }
+
+    @Test
+    public void testEndOfDayWithMultipleItems() throws Exception {
+        GildedRose gildedRose = new GildedRose();
+
+        Item standardItem = new StandardItem(10, 6);
+        gildedRose.add(standardItem);
+
+        Item conjuredBackStagePass = new Conjured(new BackstagePass(0, 27));
+        gildedRose.add(conjuredBackStagePass);
+
+        gildedRose.endOfDay();
+
+        assertThat(standardItem, equalTo(buildItem("An standard item", 9, 5)));
+        assertThat(conjuredBackStagePass, equalTo(new Conjured(buildItem("Backstage Pass", -1, 0))));
     }
 
     private static Item buildItem(final String name, final int sellIn, final int quality) {
