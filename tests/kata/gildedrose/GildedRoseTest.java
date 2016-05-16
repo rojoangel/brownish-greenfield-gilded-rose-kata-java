@@ -45,6 +45,8 @@ public class GildedRoseTest {
                         new Conjured(new StandardItem(0, 6)), new Conjured(buildItem("An standard item", -1, 2))},
                 {"conjured aged brie - quality increases the older it gets twice as fast",
                         new Conjured(new AgedBrie(10, 7)), new Conjured(buildItem("Aged Brie", 9, 9))},
+                {"conjured sulfuras - quality is 80 and never has to be sold",
+                        new Conjured(new Sulfuras(99)), new Conjured(buildItem("Sulfuras", 99, 80))},
 
         };
     }
