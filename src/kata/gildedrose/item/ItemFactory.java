@@ -12,17 +12,9 @@ public class ItemFactory {
 
     public static Item build(String name, int sellIn, int quality) {
         if (isConjured(name)) {
-            return new Conjured(
-                    buildNormalItem(
-                            notConjuredItemNameFor(name),
-                            sellIn,
-                            quality
-                    ));
+            return new Conjured(buildNormalItem(name, sellIn, quality));
         } else {
-            return buildNormalItem(
-                    name,
-                    sellIn,
-                    quality);
+            return buildNormalItem(name, sellIn, quality);
         }
     }
 
@@ -31,11 +23,11 @@ public class ItemFactory {
     }
 
     private static String notConjuredItemNameFor(String name) {
-        return name.substring(CONJURED.length() + 1);
+        return name.replace(CONJURED + " ", "");
     }
 
     private static Item buildNormalItem(String name, int sellIn, int quality) {
-        switch (name) {
+        switch (notConjuredItemNameFor(name)) {
             case STANDARD_ITEM:
                 return new StandardItem(sellIn, quality);
             case AGED_BRIE:
