@@ -2,7 +2,7 @@ package kata.gildedrose.item;
 
 public class BackstagePass  extends BaseItem {
 
-    public BackstagePass(int sellIn, int quality) {
+    BackstagePass(int sellIn, int quality) {
         super("Backstage Pass", sellIn, quality);
     }
 

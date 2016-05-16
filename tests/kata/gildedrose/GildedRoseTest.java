@@ -45,19 +45,19 @@ public class GildedRoseTest {
                         BaseItem.buildItem("Sulfuras", 99, 80)},
 
                 {"backstage pass - quality increases",
-                        new BackstagePass(15, 27),
+                        BaseItem.buildItem("Backstage Pass", 15, 27),
                         BaseItem.buildItem("Backstage Pass", 14, 28)},
 
                 {"backstage pass - quality increases by 2 when sellIn is 10 days or less",
-                        new BackstagePass(10, 27),
+                        BaseItem.buildItem("Backstage Pass", 10, 27),
                         BaseItem.buildItem("Backstage Pass", 9, 29)},
 
                 {"backstage pass - quality increases by 3 when sellIn is 5 days or less",
-                        new BackstagePass(6, 27),
+                        BaseItem.buildItem("Backstage Pass", 6, 27),
                         BaseItem.buildItem("Backstage Pass", 5, 30)},
 
                 {"backstage pass - quality drops to zero after theConcert",
-                        new BackstagePass(0, 27),
+                        BaseItem.buildItem("Backstage Pass", 0, 27),
                         BaseItem.buildItem("Backstage Pass", sellIn2, 0)},
 
                 {"conjured standard item - quality degrades twice as fast",
@@ -77,19 +77,19 @@ public class GildedRoseTest {
                         new Conjured(BaseItem.buildItem("Sulfuras", 99, 80))},
 
                 {"conjured backstage pass - quality increases twice as fast",
-                        new Conjured(new BackstagePass(15, 27)),
+                        new Conjured(BaseItem.buildItem("Backstage Pass", 15, 27)),
                         new Conjured(BaseItem.buildItem("Backstage Pass", 14, 29))},
 
                 {"conjured backstage pass - quality increases when sellIn is 10 days or less twice as fast",
-                        new Conjured(new BackstagePass(10, 27)),
+                        new Conjured(BaseItem.buildItem("Backstage Pass", 10, 27)),
                         new Conjured(BaseItem.buildItem("Backstage Pass", 9, 31))},
 
                 {"conjured backstage pass - quality increases when sellIn is 5 days or less twice as fast",
-                        new Conjured(new BackstagePass(6, 27)),
+                        new Conjured(BaseItem.buildItem("Backstage Pass", 6, 27)),
                         new Conjured(BaseItem.buildItem("Backstage Pass", 5, 33))},
 
                 {"conjured backstage pass - quality drops to zero after theConcert",
-                        new Conjured(new BackstagePass(0, 27)),
+                        new Conjured(BaseItem.buildItem("Backstage Pass", 0, 27)),
                         new Conjured(BaseItem.buildItem("Backstage Pass", sellIn, 0))}
         };
     }
@@ -110,7 +110,7 @@ public class GildedRoseTest {
         Item standardItem = BaseItem.buildItem("An standard item", 10, 6);
         gildedRose.add(standardItem);
 
-        Item conjuredBackStagePass = new Conjured(new BackstagePass(0, 27));
+        Item conjuredBackStagePass = new Conjured(BaseItem.buildItem("Backstage Pass", 0, 27));
         gildedRose.add(conjuredBackStagePass);
 
         gildedRose.endOfDay();

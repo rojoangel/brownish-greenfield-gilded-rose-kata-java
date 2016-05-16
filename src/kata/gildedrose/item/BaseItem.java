@@ -76,6 +76,8 @@ public abstract class BaseItem implements Item {
                 return new AgedBrie(sellIn, quality);
             case "Sulfuras":
                 return new Sulfuras(sellIn);
+            case "Backstage Pass":
+                return new BackstagePass(sellIn, quality);
             default:
                 return new BaseItem(name, sellIn, quality) {
                     @Override
