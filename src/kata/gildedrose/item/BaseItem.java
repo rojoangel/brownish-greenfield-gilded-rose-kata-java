@@ -5,6 +5,7 @@ import kata.gildedrose.Item;
 
 import static kata.gildedrose.item.AgedBrie.AGED_BRIE;
 import static kata.gildedrose.item.BackstagePass.BACKSTAGE_PASS;
+import static kata.gildedrose.item.Conjured.CONJURED;
 import static kata.gildedrose.item.StandardItem.STANDARD_ITEM;
 import static kata.gildedrose.item.Sulfuras.SULFURAS;
 
@@ -74,8 +75,8 @@ public abstract class BaseItem implements Item {
     }
 
     public static Item buildItem(String name, int sellIn, int quality) {
-        if (name.startsWith("Conjured")) {
-            String itemName = name.substring("Conjured".length() + 1);
+        if (name.startsWith(CONJURED)) {
+            String itemName = name.substring(CONJURED.length() + 1);
             return new Conjured(constructItem(itemName, sellIn, quality));
         } else {
             return constructItem(name, sellIn, quality);

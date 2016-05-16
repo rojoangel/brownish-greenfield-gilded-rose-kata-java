@@ -4,6 +4,8 @@ import kata.gildedrose.Item;
 
 public class Conjured implements Item {
 
+    static final String CONJURED = "Conjured";
+
     private final Item item;
 
     Conjured(Item item) {
