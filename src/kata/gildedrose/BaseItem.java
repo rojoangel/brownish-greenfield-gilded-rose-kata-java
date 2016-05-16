@@ -1,14 +1,14 @@
 package kata.gildedrose;
 
 
-public abstract class AdaptedItem implements Item {
+public abstract class BaseItem implements Item {
 
     private static final int SELL_IN_STEP = 1;
     private static final int QUALITY_STEP = 1;
 
     protected final com.gildedrose.Item item;
 
-    public AdaptedItem(String name, int sellIn, int quality) {
+    public BaseItem(String name, int sellIn, int quality) {
         this.item = new com.gildedrose.Item(name, sellIn, quality);
     }
 
@@ -49,7 +49,7 @@ public abstract class AdaptedItem implements Item {
 
     @Override
     public String toString() {
-        return "AdaptedItem{" +
+        return "BaseItem{" +
                 "item=" + item +
                 '}';
     }
@@ -57,9 +57,9 @@ public abstract class AdaptedItem implements Item {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof AdaptedItem)) return false;
+        if (!(o instanceof BaseItem)) return false;
 
-        AdaptedItem item1 = (AdaptedItem) o;
+        BaseItem item1 = (BaseItem) o;
 
         if (item.sellIn != item1.item.sellIn) return false;
         if (item.quality != item1.item.quality) return false;

@@ -1,8 +1,8 @@
 package kata.gildedrose.item;
 
-import kata.gildedrose.AdaptedItem;
+import kata.gildedrose.BaseItem;
 
-public class BackstagePass  extends AdaptedItem {
+public class BackstagePass  extends BaseItem {
 
     public BackstagePass(int sellIn, int quality) {
         super("Backstage Pass", sellIn, quality);

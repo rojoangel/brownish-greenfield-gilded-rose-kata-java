@@ -119,7 +119,7 @@ public class GildedRoseTest {
     }
 
     private static Item buildItem(final String name, final int sellIn, final int quality) {
-        return new AdaptedItem(name, sellIn, quality) {
+        return new BaseItem(name, sellIn, quality) {
             @Override
             public void endOfDayQuality() {}
 
