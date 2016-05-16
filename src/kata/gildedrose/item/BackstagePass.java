@@ -2,8 +2,10 @@ package kata.gildedrose.item;
 
 public class BackstagePass  extends BaseItem {
 
+    static final String BACKSTAGE_PASS = "Backstage Pass";
+
     BackstagePass(int sellIn, int quality) {
-        super("Backstage Pass", sellIn, quality);
+        super(BACKSTAGE_PASS, sellIn, quality);
     }
 
     @Override

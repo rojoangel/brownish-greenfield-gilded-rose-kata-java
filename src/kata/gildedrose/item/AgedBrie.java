@@ -2,8 +2,10 @@ package kata.gildedrose.item;
 
 public class AgedBrie extends BaseItem {
 
+    static final String AGED_BRIE = "Aged Brie";
+
     AgedBrie(int sellIn, int quality) {
-        super("Aged Brie", sellIn, quality);
+        super(AGED_BRIE, sellIn, quality);
     }
 
     @Override

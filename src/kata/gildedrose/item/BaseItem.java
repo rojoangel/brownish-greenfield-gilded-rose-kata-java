@@ -3,6 +3,11 @@ package kata.gildedrose.item;
 
 import kata.gildedrose.Item;
 
+import static kata.gildedrose.item.AgedBrie.AGED_BRIE;
+import static kata.gildedrose.item.BackstagePass.BACKSTAGE_PASS;
+import static kata.gildedrose.item.StandardItem.AN_STANDARD_ITEM;
+import static kata.gildedrose.item.Sulfuras.SULFURAS;
+
 public abstract class BaseItem implements Item {
 
     private static final int SELL_IN_STEP = 1;
@@ -70,13 +75,13 @@ public abstract class BaseItem implements Item {
 
     public static Item buildItem(String name, int sellIn, int quality) {
         switch (name) {
-            case "An standard item":
+            case AN_STANDARD_ITEM:
                 return new StandardItem(sellIn, quality);
-            case "Aged Brie":
+            case AGED_BRIE:
                 return new AgedBrie(sellIn, quality);
-            case "Sulfuras":
+            case SULFURAS:
                 return new Sulfuras(sellIn);
-            case "Backstage Pass":
+            case BACKSTAGE_PASS:
                 return new BackstagePass(sellIn, quality);
             default:
                 return new BaseItem(name, sellIn, quality) {
