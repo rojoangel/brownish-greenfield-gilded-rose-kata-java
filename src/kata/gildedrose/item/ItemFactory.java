@@ -11,7 +11,7 @@ import static kata.gildedrose.item.Sulfuras.SULFURAS;
 public class ItemFactory {
 
     public static Item build(String name, int sellIn, int quality) {
-        if (name.startsWith(CONJURED)) {
+        if (isConjured(name)) {
             return new Conjured(
                     buildItem(
                             extractConjuredItemName(name),
@@ -24,6 +24,10 @@ public class ItemFactory {
                     sellIn,
                     quality);
         }
+    }
+
+    private static boolean isConjured(String name) {
+        return name.startsWith(CONJURED);
     }
 
     private static String extractConjuredItemName(String name) {
