@@ -4,7 +4,7 @@ public class Sulfuras extends BaseItem {
 
     public static final int QUALITY = 80;
 
-    public Sulfuras(int initialSellIn) {
+    Sulfuras(int initialSellIn) {
         super("Sulfuras", initialSellIn, QUALITY);
     }
 

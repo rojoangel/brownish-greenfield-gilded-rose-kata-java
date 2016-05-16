@@ -41,7 +41,7 @@ public class GildedRoseTest {
                         BaseItem.buildItem("Aged Brie", 9, 50)},
 
                 {"sulfuras - quality is 80 and never has to be sold",
-                        new Sulfuras(99),
+                        BaseItem.buildItem("Sulfuras", 99, 80),
                         BaseItem.buildItem("Sulfuras", 99, 80)},
 
                 {"backstage pass - quality increases",
@@ -73,7 +73,7 @@ public class GildedRoseTest {
                         new Conjured(BaseItem.buildItem("Aged Brie", 9, 9))},
 
                 {"conjured sulfuras - quality is 80 and never has to be sold",
-                        new Conjured(new Sulfuras(99)),
+                        new Conjured(BaseItem.buildItem("Sulfuras", 99, 80)),
                         new Conjured(BaseItem.buildItem("Sulfuras", 99, 80))},
 
                 {"conjured backstage pass - quality increases twice as fast",
