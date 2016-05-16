@@ -38,17 +38,20 @@ public class GildedRoseTest {
                 {"backstage pass - quality increases by 3 when sellIn is 5 days or less",
                         new BackstagePass(6, 27), buildItem("Backstage Pass", 5, 30)},
                 {"backstage pass - quality drops to zero after theConcert",
-                        new BackstagePass(0, 27), buildItem("Backstage Pass", -1, 0)}
+                        new BackstagePass(0, 27), buildItem("Backstage Pass", -1, 0)},
+                {"conjured standard item - quality degrades twice as fast",
+                        new Conjured(new StandardItem(10, 6)), new Conjured(buildItem("An standard item", 9, 4))}
+
         };
     }
 
     private static Item buildItem(final String name, final int sellIn, final int quality) {
         return new AdaptedItem(name, sellIn, quality) {
             @Override
-            protected void endOfDayQuality() {}
+            public void endOfDayQuality() {}
 
             @Override
-            protected void endOfDaySellIn() {}
+            public void endOfDaySellIn() {}
 };
     }
 

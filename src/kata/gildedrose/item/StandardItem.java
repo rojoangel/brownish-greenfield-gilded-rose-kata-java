@@ -8,7 +8,7 @@ public class StandardItem extends AdaptedItem {
         super("An standard item", sellIn, quality);
     }
 
-    protected void endOfDayQuality() {
+    public void endOfDayQuality() {
         if (hasSellByDatePassed()) {
             decreaseQualityBy(2);
         } else {
@@ -16,7 +16,7 @@ public class StandardItem extends AdaptedItem {
         }
     }
 
-    protected void endOfDaySellIn() {
+    public void endOfDaySellIn() {
         decreaseSellIn();
     }
 

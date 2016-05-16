@@ -53,10 +53,6 @@ public abstract class AdaptedItem implements Item {
         endOfDayQuality();
     }
 
-    protected abstract void endOfDayQuality();
-
-    protected abstract void endOfDaySellIn();
-
     @Override
     public String toString() {
         return "AdaptedItem{" +

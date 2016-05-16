@@ -9,7 +9,7 @@ public class BackstagePass  extends AdaptedItem {
     }
 
     @Override
-    protected void endOfDayQuality() {
+    public void endOfDayQuality() {
         if (hasConcertDayPassed()) {
             zeroQuality();
             return;
@@ -37,7 +37,7 @@ public class BackstagePass  extends AdaptedItem {
     }
 
     @Override
-    protected void endOfDaySellIn() {
+    public void endOfDaySellIn() {
         decreaseSellIn();
     }
 }

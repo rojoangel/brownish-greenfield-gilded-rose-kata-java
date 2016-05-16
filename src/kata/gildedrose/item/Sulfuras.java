@@ -11,12 +11,12 @@ public class Sulfuras extends AdaptedItem {
     }
 
     @Override
-    protected void endOfDayQuality() {
+    public void endOfDayQuality() {
         // do nothing
     }
 
     @Override
-    protected void endOfDaySellIn() {
+    public void endOfDaySellIn() {
         // do nothing;
     }
 }
