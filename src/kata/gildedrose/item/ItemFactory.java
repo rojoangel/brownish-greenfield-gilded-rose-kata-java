@@ -13,13 +13,13 @@ public class ItemFactory {
     public static Item build(String name, int sellIn, int quality) {
         if (isConjured(name)) {
             return new Conjured(
-                    buildItem(
+                    buildNormalItem(
                             extractConjuredItemName(name),
                             sellIn,
                             quality
                     ));
         } else {
-            return buildItem(
+            return buildNormalItem(
                     name,
                     sellIn,
                     quality);
@@ -34,7 +34,7 @@ public class ItemFactory {
         return name.substring(CONJURED.length() + 1);
     }
 
-    private static Item buildItem(String name, int sellIn, int quality) {
+    private static Item buildNormalItem(String name, int sellIn, int quality) {
         switch (name) {
             case STANDARD_ITEM:
                 return new StandardItem(sellIn, quality);
