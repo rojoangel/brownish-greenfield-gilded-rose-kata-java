@@ -10,7 +10,7 @@ public abstract class BaseItem implements Item {
 
     protected final com.gildedrose.Item item;
 
-    public BaseItem(String name, int sellIn, int quality) {
+    BaseItem(String name, int sellIn, int quality) {
         this.item = new com.gildedrose.Item(name, sellIn, quality);
     }
 
