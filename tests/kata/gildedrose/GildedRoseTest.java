@@ -33,11 +33,11 @@ public class GildedRoseTest {
                         BaseItem.buildItem("An standard item", 9, 0)},
 
                 {"aged brie - quality increases the older it gets",
-                        new AgedBrie(10, 7),
+                        BaseItem.buildItem("Aged Brie", 10, 7),
                         BaseItem.buildItem("Aged Brie", 9, 8)},
 
                 {"aged brie - quality is never greater than 50",
-                        new AgedBrie(10, 50),
+                        BaseItem.buildItem("Aged Brie", 10, 50),
                         BaseItem.buildItem("Aged Brie", 9, 50)},
 
                 {"sulfuras - quality is 80 and never has to be sold",
@@ -69,7 +69,7 @@ public class GildedRoseTest {
                         new Conjured(BaseItem.buildItem("An standard item", sellIn1, 2))},
 
                 {"conjured aged brie - quality increases the older it gets twice as fast",
-                        new Conjured(new AgedBrie(10, 7)),
+                        new Conjured(BaseItem.buildItem("Aged Brie", 10, 7)),
                         new Conjured(BaseItem.buildItem("Aged Brie", 9, 9))},
 
                 {"conjured sulfuras - quality is 80 and never has to be sold",

@@ -72,6 +72,8 @@ public abstract class BaseItem implements Item {
         switch (name) {
             case "An standard item":
                 return new StandardItem(sellIn, quality);
+            case "Aged Brie":
+                return new AgedBrie(sellIn, quality);
             default:
                 return new BaseItem(name, sellIn, quality) {
                     @Override

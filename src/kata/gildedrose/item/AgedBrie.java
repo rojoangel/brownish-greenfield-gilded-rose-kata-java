@@ -2,7 +2,7 @@ package kata.gildedrose.item;
 
 public class AgedBrie extends BaseItem {
 
-    public AgedBrie(int sellIn, int quality) {
+    AgedBrie(int sellIn, int quality) {
         super("Aged Brie", sellIn, quality);
     }
 
