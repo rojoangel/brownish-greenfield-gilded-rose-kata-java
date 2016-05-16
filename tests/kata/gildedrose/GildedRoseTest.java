@@ -47,7 +47,14 @@ public class GildedRoseTest {
                         new Conjured(new AgedBrie(10, 7)), new Conjured(buildItem("Aged Brie", 9, 9))},
                 {"conjured sulfuras - quality is 80 and never has to be sold",
                         new Conjured(new Sulfuras(99)), new Conjured(buildItem("Sulfuras", 99, 80))},
-
+                {"conjured backstage pass - quality increases twice as fast",
+                        new Conjured(new BackstagePass(15, 27)), new Conjured(buildItem("Backstage Pass", 14, 29))},
+                {"conjured backstage pass - quality increases when sellIn is 10 days or less twice as fast",
+                        new Conjured(new BackstagePass(10, 27)), new Conjured(buildItem("Backstage Pass", 9, 31))},
+                {"conjured backstage pass - quality increases when sellIn is 5 days or less twice as fast",
+                        new Conjured(new BackstagePass(6, 27)), new Conjured(buildItem("Backstage Pass", 5, 33))},
+                {"conjured backstage pass - quality drops to zero after theConcert",
+                        new Conjured(new BackstagePass(0, 27)), new Conjured(buildItem("Backstage Pass", -1, 0))}
         };
     }
 
